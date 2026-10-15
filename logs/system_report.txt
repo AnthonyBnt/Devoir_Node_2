@@ -1,11 +1,11 @@
-Rapport systeme
+Rapport système
 
 ================
 
-Date et heure de collecte : 15/10/2026 08:26:29
+Les données ont été colléctes le 15/10/2026 08:44:37
 
 Plateforme : win32
 Architecture du CPU : x64
 Nombre de CPU : 8
-Memoire totale : 33873780736 octets
-Memoire libre : 12267638784 octets
+Memoire totale : 33.873780736 Go
+Memoire libre : 13.339369472 Go

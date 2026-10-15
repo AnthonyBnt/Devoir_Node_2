@@ -2,29 +2,34 @@ const os = require('os');
 const path = require('path');
 const fs = require('fs');
 
+// Récuperation de la date et de l'heure lors de la récuperation des informations systèmes
+const dateCollecte = new Date().toLocaleString('fr-FR');
+
 // Récuperation des informations du système
 const plateforme = os.platform();
 const architecture = os.arch();
 const nombreDeCpu = os.cpus().length;
-const memoireTotale = os.totalmem();
-const memoireLibre = os.freemem();
 
-// Récuperation de la date et de l'heure lors de la récuperation des informations systèmes
-const dateCollecte = new Date().toLocaleString('fr-FR');
+// Mémoire totale passée de octet à Go
+let memoireTotale = os.totalmem();
+memoireTotale = memoireTotale/10**9
 
+// Mémoire Libre passée de octet à Go
+let memoireLibre = os.freemem();
+memoireLibre = memoireLibre/10**9
 
 // Mise en forme du rapport
 const rapport = `Rapport système
 
 ================
 
-Date et heure de collecte : ${dateCollecte}
+Les données ont été colléctes le ${dateCollecte}
 
 Plateforme : ${plateforme}
 Architecture du CPU : ${architecture}
 Nombre de CPU : ${nombreDeCpu}
-Memoire totale : ${memoireTotale} octets
-Memoire libre : ${memoireLibre} octets
+Memoire totale : ${memoireTotale} Go
+Memoire libre : ${memoireLibre} Go
 `;
 
 // Création du doossier logs dans le répertoire courant si nécessaire
